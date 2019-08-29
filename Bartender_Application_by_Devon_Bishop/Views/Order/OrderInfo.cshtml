@@ -1,0 +1,44 @@
+﻿@model Bartender_Application_by_Devon_Bishop.Models.Order
+@{
+    Layout = "_Layout";
+
+
+}
+
+<body>
+    @if (TempData["message"] != null)
+    {<div class="alert alert-success">@TempData["message"]</div>}
+
+</body>
+
+<form asp-action="orderInFo" method="post">
+    @*<input type="hidden" asp-for="ID" />*@
+
+    <div class="form-group">
+        <label asp-for="ID"></label>
+        <input asp-for="ID" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Customer"></label>
+        <input asp-for="Customer" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <select asp-for="Status" class="form-control">
+            <option>Order is being processed</option>
+            <option>Order is being prepared</option>
+            <option>Order finished</option>
+            <option>Order canceled</option>
+        </select>
+    </div>
+
+
+
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit">Save</button>
+        <a asp-action="List" class="btn btn-default">Cancel</a>
+    </div>
+
+</form>
