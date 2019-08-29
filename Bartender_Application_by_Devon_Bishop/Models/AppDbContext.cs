@@ -10,7 +10,7 @@ namespace Bartender_Application_by_Devon_Bishop.Models
         public AppDbContext(DbContextOptions<AppDbContext> options) :
             base(options)
         { }
-        //note or comment somewhere in my project
+        //note or comment somewhere in my project. something something something
 
         public DbSet<Order> Order
         {
